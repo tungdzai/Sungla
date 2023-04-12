@@ -9,17 +9,21 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                <div class="glasses_box">
-                    <figure><img src="images/glass1.png" alt="#"/></figure>
-                    <h3><span class="blu">$</span>50</h3>
-                    <p>Sunglasses</p>
+            <div class="row">
+                @foreach($products as $index =>$product)
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="glasses_box">
+                            <a href="">
+                                <figure><img src="{{$product->image}}" alt="#"/></figure>
+                                <h3><span class="blu">$</span>{{$product->price}}</h3>
+                                <p>{{$product->name}}</p>
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+                <div class="col-md-12">
+                    <a class="read_more" href="#">Xem thêm</a>
                 </div>
             </div>
-            <div class="col-md-12">
-                <a class="read_more" href="#">Xem thêm</a>
-            </div>
-        </div>
     </div>
 </div>

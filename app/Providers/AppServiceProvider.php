@@ -5,7 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\Customers\CustomerRepositoryInterface;
 use App\Repositories\Customers\CustomerRepository;
-
+use App\Repositories\Products\ProductRepositoryInterface;
+use App\Repositories\Products\ProductRepository;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(CustomerRepositoryInterface::class,CustomerRepository::class);
+        $this->app->singleton(ProductRepositoryInterface::class,ProductRepository::class);
     }
 
     /**
