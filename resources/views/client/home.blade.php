@@ -1,0 +1,17 @@
+@extends('layout.index')
+@section('title','Sungla')
+@section('banner')
+    @include('layout.blocks.banner')
+@endsection
+@section('about')
+    @include('layout.blocks.about')
+@endsection
+@section('products')
+  @include('layout.blocks.products')
+@endsection
+@section('shop')
+    @include('layout.blocks.shop')
+@endsection
+@section('clients')
+  @include('layout.blocks.clients')
+@endsection
