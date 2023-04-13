@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="{{asset('template/css/login.css')}}">
     <link rel="stylesheet" href="{{asset('template/css/product_detail.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('template/css/cart.css')}}">--}}
     <!-- Responsive-->
     <link rel="stylesheet" href="{{asset('template/css/responsive.css')}}">
     <!-- fevicon -->
@@ -66,6 +67,7 @@
 <!-- Our  Glasses section -->
 @yield('products')
 @yield('product_detail')
+@yield('showCart')
 <!-- end Our  Glasses section -->
 <!-- Our shop section -->
 @yield('shop')
