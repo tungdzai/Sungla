@@ -13,7 +13,7 @@
                 @foreach($products as $index =>$product)
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                         <div class="glasses_box">
-                            <a href="">
+                            <a href="{{route('customer.productDetail',['id'=>$product->id])}}">
                                 <figure><img src="{{$product->image}}" alt="#"/></figure>
                                 <h3><span class="blu">$</span>{{$product->price}}</h3>
                                 <p>{{$product->name}}</p>

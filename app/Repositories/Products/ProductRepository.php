@@ -11,12 +11,11 @@ class ProductRepository implements ProductRepositoryInterface
     public function __construct(Products $products)
     {
         $this->query = $products->select(
+            'id',
             'name',
             'description',
             'price',
             'image',
-            'brand_id',
-            'category_id'
         );
     }
 
@@ -26,5 +25,26 @@ class ProductRepository implements ProductRepositoryInterface
     public function getAll()
     {
         return $this->query->get();
+    }
+
+    public function getProduct($id)
+    {
+        if (!empty($id)){
+            $product=$this->query
+                ->select(
+                    'products.id',
+                    'products.name',
+                    'products.description',
+                    'products.price',
+                    'products.image',
+                    'brands.name as brand_name',
+                    'categories.name as category_name',
+                )
+                ->join('brands','brands.id','=','products.brand_id')
+                ->join('categories','categories.id','=','products.category_id')
+                ->where('products.id',$id)
+                ->first();
+            return  $product;
+        }
     }
 }

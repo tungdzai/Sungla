@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Auth\AuthClientController;
+use App\Http\Controllers\Client\ProductsController;
+use App\Http\Controllers\Client\CartsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,8 @@ Route::prefix('')->name('client.')->group(function () {
     Route::get('/logout', [AuthClientController::class, 'logout'])->name('logout');
 });
 
+Route::prefix('/customer')->middleware('auth:customer')->name('customer.')->group(function () {
+    Route::get('/product-detail/{id}',[ProductsController::class,'ProductDetail'])->name('productDetail');
+
+    Route::post('/cart',[CartsController::class,'addCart'])->name('cart');
+});

@@ -8,14 +8,16 @@ use  Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Client\RegisterRequest;
 use App\Repositories\Customers\CustomerRepositoryInterface;
+use App\Repositories\Carts\CartRepositoryInterface;
 
 class AuthClientController extends Controller
 {
-    public $customerRepository;
+    public $customerRepository, $cartRepository;
 
-    public function __construct(CustomerRepositoryInterface $customerRepository)
+    public function __construct(CustomerRepositoryInterface $customerRepository, CartRepositoryInterface $cartRepository)
     {
         $this->customerRepository = $customerRepository;
+        $this->cartRepository = $cartRepository;
     }
 
     public function loginClient()
@@ -52,7 +54,13 @@ class AuthClientController extends Controller
         ];
         $statusCustomer = $this->customerRepository->addCustomer($customer);
         if (!empty($statusCustomer)) {
-            return redirect()->route('client.login');
+            $customer_id = [
+                'customer_id' => $statusCustomer->id,
+            ];
+            $statusCart = $this->cartRepository->addCart($customer_id);
+            if (!empty($statusCart)) {
+                return redirect()->route('client.login');
+            }
         }
 
     }

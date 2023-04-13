@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{asset('template/css/style.css')}}">
 
     <link rel="stylesheet" href="{{asset('template/css/login.css')}}">
+    <link rel="stylesheet" href="{{asset('template/css/product_detail.css')}}">
     <!-- Responsive-->
     <link rel="stylesheet" href="{{asset('template/css/responsive.css')}}">
     <!-- fevicon -->
@@ -31,6 +32,13 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 </head>
 <!-- body -->
 <body class="main-layout">
@@ -57,6 +65,7 @@
 @yield('register')
 <!-- Our  Glasses section -->
 @yield('products')
+@yield('product_detail')
 <!-- end Our  Glasses section -->
 <!-- Our shop section -->
 @yield('shop')
@@ -135,9 +144,13 @@
     }
 </script>
 <!-- google map js -->
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDevKVNhAQWEb3ifdk81-d_uJJtbt8RHkU&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDevKVNhAQWEb3ifdk81-d_uJJtbt8RHkU&callback=initMap"></script>
 <!-- end google map js -->
+<script src="{{asset('template/js/product_detail.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>
 
