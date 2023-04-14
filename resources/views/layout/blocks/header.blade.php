@@ -38,7 +38,7 @@
                                 <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
                             </li>
                             <li class="nav-item d_none sea_icon">
-                                <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                <a class="nav-link" href="{{route('customer.showCart')}}"><i class="fa fa-shopping-cart"></i></a>
                             </li>
                             @if(session('customer'))
                                 <div class="dropdown ">

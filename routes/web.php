@@ -31,7 +31,10 @@ Route::prefix('')->name('client.')->group(function () {
 });
 
 Route::prefix('/customer')->middleware('auth:customer')->name('customer.')->group(function () {
-    Route::get('/product-detail/{id}',[ProductsController::class,'ProductDetail'])->name('productDetail');
+    Route::get('/product-detail/{id}', [ProductsController::class, 'ProductDetail'])->name('productDetail');
 
-    Route::post('/cart',[CartsController::class,'addCart'])->name('cart');
+    Route::post('/cart', [CartsController::class, 'addCart'])->name('cart');
+
+    Route::get('/cart', [CartsController::class, 'showCart'])->name('showCart');
+    Route::post('/delete/{$product_id}',[CartsController::class,'deleteProductCart'])->name('deleteProductCart');
 });
