@@ -15,7 +15,7 @@ class CartsController extends Controller
         $quantity = $request->input('quantity');
         $customer = session('customer');
         if (!empty($customer->id)) {
-            $cart_id=Carts::select('id')
+            $cart_id=Carts::select('id');
         }
         dd($customer->id);
 
