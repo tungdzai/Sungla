@@ -31,7 +31,6 @@ class CartsController extends Controller
             'quantity' => $quantity,
             'price' => $product->price
         ];
-//        dd($cart_item);
         $statusCartItem = $this->cartRepository->addCartItem($cart_item);
         if ($statusCartItem) {
             return redirect()->back();
